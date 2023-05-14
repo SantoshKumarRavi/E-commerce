@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import RowContainer from "./RowContainer";
 import TwocolumnContainer from "./TwocolumnContainer";
 import TopResultContainer from "./TopResultContainer";
@@ -12,10 +12,12 @@ const Calculator = ({
   setResult,
 }: any) => {
   useEffect(() => {
-    setResult(() => {
-      return result + currentKey.curr;
-    });
-  }, [currentKey]);
+    if(result!==""&& currentKey.curr!==""){
+      setResult(() => {
+        return result + currentKey.curr;
+      });
+    }
+  }, [currentKey,setResult,result]);
   return (
     <div
       style={{
