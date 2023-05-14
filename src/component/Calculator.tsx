@@ -11,13 +11,13 @@ const Calculator = ({
   result,
   setResult,
 }: any) => {
-  useEffect(() => {
-    if(result!==""&& currentKey.curr!==""){
-      setResult(() => {
-        return result + currentKey.curr;
+  useEffect(() => {    
+    if(currentKey.curr!==""){
+      setResult((pre:any) => {
+        return pre + currentKey.curr;
       });
     }
-  }, [currentKey,setResult,result]);
+  }, [currentKey,setResult]);
   return (
     <div
       style={{
