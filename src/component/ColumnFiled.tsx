@@ -23,8 +23,8 @@ const ColumnFiled = ({ onClickHandler, bg, text, colSpan = 0 }: any) => {
       }}
       onMouseEnter={() => setMouseEnter(true)}
       onMouseLeave={() => setMouseEnter(false)}
-      onClick={():any=>{
-        onClickHandler(text)
+      onClick={(): any => {
+        onClickHandler(text);
       }}
       colSpan={colSpan}
     >

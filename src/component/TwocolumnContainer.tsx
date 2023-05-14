@@ -8,7 +8,7 @@ const TwocolumnContainer = ({
   secondText = ".",
   thirdText = "=",
   onClickHandler,
-  onSubmitHandler
+  onSubmitHandler,
 }: any) => {
   return (
     <tr>

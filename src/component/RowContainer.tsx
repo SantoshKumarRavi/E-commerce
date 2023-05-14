@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ColumnFiled from "./ColumnFiled";
 const RowContainer = ({
   onClickHandler,
@@ -10,12 +10,12 @@ const RowContainer = ({
   secondText = "+/-",
   thirdText = "%",
   forthText = "÷",
-  clearResult
+  clearResult,
 }: any) => {
   return (
     <tr>
       <ColumnFiled
-        onClickHandler={firstText=="AC"?clearResult:onClickHandler}        
+        onClickHandler={firstText === "AC" ? clearResult : onClickHandler}
         bg={firstBg}
         text={firstText}
       />

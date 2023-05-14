@@ -7,10 +7,10 @@ const HistoryInputContainer = ({
   thirdColumn = "Result",
   fourthColumn = false,
   bottomBorder = false,
-  isHeading=false,
+  isHeading = false,
   EditResult,
   DeleteData,
-  id
+  id,
 }: any) => {
   return (
     <div
@@ -19,7 +19,7 @@ const HistoryInputContainer = ({
         direction: "ltr",
         // borderTop:"1px solid #f4f4f4",
       }}
-      className={`border-t-2 ${bottomBorder&&"border-b-2"}`}
+      className={`border-t-2 ${bottomBorder && "border-b-2"}`}
     >
       <div
         style={{
@@ -41,22 +41,34 @@ const HistoryInputContainer = ({
           >
             <tbody>
               <tr className="flex">
-                <td className="w-12 flex items-center" >
-                  <div className="PaQdxb UpZIS flex" >
+                <td className="w-12 flex items-center">
+                  <div className="PaQdxb UpZIS flex">
                     <input type="checkbox" className="w-5 h-5" />
                   </div>
                 </td>
-                <td className={`w-32  text-sm ${isHeading&&"font-bold"} ${isHeading&&"text-base"}`}>
+                <td
+                  className={`w-32  text-sm ${isHeading && "font-bold"} ${
+                    isHeading && "text-base"
+                  }`}
+                >
                   <div className="PaQdxb ">
                     <div className="text-left">{firstColumn}</div>
                   </div>
                 </td>
-                <td className={`w-32  text-sm ${isHeading&&"font-bold"} ${isHeading&&"text-base"}`}>
+                <td
+                  className={`w-32  text-sm ${isHeading && "font-bold"} ${
+                    isHeading && "text-base"
+                  }`}
+                >
                   <div className="PaQdxb">
                     <div className="text-left">{secondColumn}</div>
                   </div>
                 </td>
-                <td className={`w-32  text-sm ${isHeading&&"font-bold"} ${isHeading&&"text-base"}`}>
+                <td
+                  className={`w-32  text-sm ${isHeading && "font-bold"} ${
+                    isHeading && "text-base"
+                  }`}
+                >
                   <div className="PaQdxb">
                     <div className="text-left">{thirdColumn}</div>
                   </div>
@@ -65,10 +77,14 @@ const HistoryInputContainer = ({
                   <div className="PaQdxb UpZIS">
                     {fourthColumn && (
                       <div className="flex w-full justify-around items-center">
-                        <div onClick={()=>EditResult(secondColumn,firstColumn,id)}>
-                          <CycleSvg/>
+                        <div
+                          onClick={() =>
+                            EditResult(secondColumn, firstColumn, id)
+                          }
+                        >
+                          <CycleSvg />
                         </div>
-                        <div onClick={()=>DeleteData(id)}>
+                        <div onClick={() => DeleteData(id)}>
                           <DeleteSvg />
                         </div>
                       </div>

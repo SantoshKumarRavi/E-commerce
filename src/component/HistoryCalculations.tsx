@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import HistoryInputContainer from "./HistoryInputContainer";
 const HistoryCalculations = ({
   title = "Your Calculations",
   EditResult,
-  isLoading, 
+  isLoading,
   setLoading,
-  data, 
+  data,
   setData,
   DeleteData,
-  Rerender
+  Rerender,
 }: any) => {
-  
   useEffect(() => {
     try {
       setLoading(true);
@@ -19,14 +18,17 @@ const HistoryCalculations = ({
         .then((data) => {
           console.log("data", data);
           setData(() => data);
+        }).catch((err)=>{
+          console.log("err",err);    
         });
     } catch (err) {
+      console.log("err",err);
     } finally {
-      setTimeout(()=>{
+      setTimeout(() => {
         setLoading(false);
-      },3000)
+      }, 3000);
     }
-  }, [Rerender]);
+  }, [Rerender,setData,setLoading]);
   return (
     <div>
       <h4 className="font-semibold my-2 text-xl">{title}</h4>
@@ -61,7 +63,7 @@ const HistoryCalculations = ({
       <div>
         {!isLoading &&
           data.length > 0 &&
-          data.map(({name,calculation,result,_id}:any, i:any):any => {
+          data.map(({ name, calculation, result, _id }: any, i: any): any => {
             return (
               <HistoryInputContainer
                 key={i}
@@ -72,7 +74,7 @@ const HistoryCalculations = ({
                 EditResult={EditResult}
                 fourthColumn={true}
                 DeleteData={DeleteData}
-                bottomBorder={i == data.length - 1 ? true : false}
+                bottomBorder={i === data.length - 1 ? true : false}
               />
             );
           })}

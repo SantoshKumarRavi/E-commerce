@@ -1,6 +1,6 @@
 import React from "react";
 
-const TopResultContainer = ({ text = "" }) => {  
+const TopResultContainer = ({ text = "" }) => {
   return (
     <div
       className="BRpYC"
@@ -10,31 +10,29 @@ const TopResultContainer = ({ text = "" }) => {
         border: "1px solid #3c4043",
         margin: "auto",
         boxSizing: "border-box",
-        display:"block",
+        display: "block",
         backgroundColor: "#585152",
-
-}}
+      }}
     >
       <div
         data-jsname="a1lrmb"
         style={{
           display: "table",
-          fontSize:"30px",
+          fontSize: "30px",
           height: "32px",
           verticalAlign: "bottom",
           position: "relative",
-          tableLayout:"fixed",
+          tableLayout: "fixed",
           width: "100%",
           zIndex: 0,
         }}
       >
         <div
-        role="presentation"
+          role="presentation"
           data-jsname="VSgwn"
           className="xwgN1d XSNERd"
           style={{
             display: "table-row",
-
           }}
         >
           <div
