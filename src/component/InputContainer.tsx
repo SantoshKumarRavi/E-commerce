@@ -17,7 +17,7 @@ const InputContainer = ({
           name="name"
           value={inputVal}
           onChange={(e) => setinputVal(e.target.value)}
-          className="py-2 pl-3 block bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md sm:text-sm focus:ring-1"
+          className="py-2 pl-3 block bg-white text-black border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md sm:text-sm focus:ring-1"
           placeholder={placeholder}
         />
         <button
