@@ -15,34 +15,22 @@ const HistoryInputContainer = ({
   return (
     <div
       style={{
-        position: "relative",
         direction: "ltr",
-        // borderTop:"1px solid #f4f4f4",
       }}
-      className={`border-t-2 ${bottomBorder && "border-b-2"}`}
+      className={`border-t-2 ${bottomBorder && "border-b-2"} relative`}
     >
       <div
+        className="w-full relative table mt-2	" //
         style={{
-          display: "table",
-          marginTop: "8px",
           zIndex: 2,
-          position: "relative",
-          width: "100%",
         }}
       >
         <div>
-          <table
-            style={{
-              float: "left",
-              // width: "42.857142857142854%",
-              borderCollapse: "collapse",
-              tableLayout: "fixed",
-            }}
-          >
+          <table className="float-left border-collapse	table-fixed">
             <tbody>
               <tr className="flex">
                 <td className="w-12 flex items-center">
-                  <div className="PaQdxb UpZIS flex">
+                  <div className="flex cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded	text-xs">
                     <input type="checkbox" className="w-5 h-5" />
                   </div>
                 </td>
@@ -51,7 +39,7 @@ const HistoryInputContainer = ({
                     isHeading && "text-base"
                   }`}
                 >
-                  <div className="PaQdxb ">
+                  <div className="cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded">
                     <div className="text-left">{firstColumn}</div>
                   </div>
                 </td>
@@ -60,7 +48,7 @@ const HistoryInputContainer = ({
                     isHeading && "text-base"
                   }`}
                 >
-                  <div className="PaQdxb">
+                  <div className="cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded">
                     <div className="text-left">{secondColumn}</div>
                   </div>
                 </td>
@@ -69,12 +57,12 @@ const HistoryInputContainer = ({
                     isHeading && "text-base"
                   }`}
                 >
-                  <div className="PaQdxb">
+                  <div className="cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded">
                     <div className="text-left">{thirdColumn}</div>
                   </div>
                 </td>
                 <td className="w-32 ">
-                  <div className="PaQdxb UpZIS">
+                  <div className="cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded">
                     {fourthColumn && (
                       <div className="flex w-full justify-around items-center">
                         <div

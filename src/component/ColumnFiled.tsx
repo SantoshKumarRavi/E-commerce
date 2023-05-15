@@ -28,18 +28,8 @@ const ColumnFiled = ({ onClickHandler, bg, text, colSpan = 0 }: any) => {
       }}
       colSpan={colSpan}
     >
-      <div className="PaQdxb A2W7l">
-        <div
-          data-jsname="j93WEe"
-          className="XRsWPe MEdqYd"
-          data-jsaction="A2jXUd"
-          role="button"
-          data-tabindex="0"
-          aria-label="left parenthesis"
-          data-ved="2ahUKEwi6h-e8vfL-AhVRSGwGHZklBXIQz6kIegQICRAe"
-        >
-          {text}
-        </div>
+      <div className="cursor-pointer	font-sans text-center	leading-9	m-1 box-border	relative	rounded		">
+        <div>{text}</div>
       </div>
     </td>
   );

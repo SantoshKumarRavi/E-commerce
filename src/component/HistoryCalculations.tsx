@@ -16,19 +16,19 @@ const HistoryCalculations = ({
       fetch("https://calculationhistory2.onrender.com/calculation")
         .then((x) => x.json())
         .then((data) => {
-          console.log("data", data);
           setData(() => data);
-        }).catch((err)=>{
-          console.log("err",err);    
+        })
+        .catch((err) => {
+          console.warn("err", err);
         });
     } catch (err) {
-      console.log("err",err);
+      console.warn("err", err);
     } finally {
       setTimeout(() => {
         setLoading(false);
       }, 3000);
     }
-  }, [Rerender,setData,setLoading]);
+  }, [Rerender, setData, setLoading]);
   return (
     <div>
       <h4 className="font-semibold my-2 text-xl">{title}</h4>

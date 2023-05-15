@@ -11,43 +11,26 @@ const Calculator = ({
   result,
   setResult,
 }: any) => {
-  useEffect(() => {    
-    if(currentKey.curr!==""){
-      setResult((pre:any) => {
+  useEffect(() => {
+    if (currentKey.curr !== "") {
+      setResult((pre: any) => {
         return pre + currentKey.curr;
       });
     }
-  }, [currentKey,setResult]);
+  }, [currentKey, setResult]);
   return (
-    <div
-      style={{
-        maxWidth: "300px",
-      }}
-    >
+    <div className="max-w-xs">
       <h4 className="font-semibold my-2 text-xl text-black">{title}</h4>
       <TopResultContainer text={result} />
       <div
         style={{
-          position: "relative",
           backgroundColor: "#585152",
         }}
+        className="relative"
       >
-        <div
-          style={{
-            display: "table",
-            position: "relative",
-            width: "100%",
-          }}
-        >
+        <div className="relative table w-full">
           <div>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "separate",
-                tableLayout: "fixed",
-                borderSpacing: "1px 1px",
-              }}
-            >
+            <table className="border-separate w-full	table-fixed border-spacing-px		">
               <tbody>
                 <RowContainer
                   onClickHandler={UpdateCurrentKey}

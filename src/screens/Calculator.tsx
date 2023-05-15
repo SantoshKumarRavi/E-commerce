@@ -65,7 +65,7 @@ const Calculator = () => {
           setResult("");
           setPreresult("");
           setContentMissing(false);
-          setEditId("")
+          setEditId("");
         })
         .catch((er) => {
           console.warn("er", er);
@@ -141,7 +141,7 @@ const Calculator = () => {
               </svg>
               <div>
                 <span className="font-medium">Alert! </span>
-                Fill all details or press "=" 
+                Fill all details or press "="
               </div>
             </div>
           )}
