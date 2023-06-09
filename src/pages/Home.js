@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import cart from "../assests/svg/cart";
 const Home = () => {
   const navigate = useNavigate();
-
   const products = useSelector((state) => {
     return state.products;
   });

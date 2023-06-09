@@ -4,18 +4,18 @@ import CategoryProducts from "./pages/CategoryProducts";
 import NotFound from "../src/pages/NotFound";
 import Cart from "./components/Cart";
 import { Route, Routes } from "react-router-dom";
-
+import PrivateRoute from "./components/PrivateRoute";
+import Login from "./components/Login";
 function App() {
   return (
-    <>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/category/:name" element={<CategoryProducts />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<PrivateRoute Element={Home} />} />
+        <Route path="/category/:name" element={<PrivateRoute Element={CategoryProducts} />} />
+        <Route path="/cart" element={<PrivateRoute Element={Cart} />} />
+        <Route path="*" element={<PrivateRoute Element={NotFound} />} />
       </Routes>
-    </>
-  );
+  )
 }
 
 export default App;
