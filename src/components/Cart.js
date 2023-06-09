@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
 import {
-  CardElement,
   Elements,
   useStripe,
   useElements,
+  PaymentElement,
 } from "@stripe/react-stripe-js";
 const stripePay = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY);
 try {
@@ -54,18 +54,34 @@ const Cart = () => {
       if (elements == null) {
         return;
       }
-      const card = elements.getElement("card");
-      console.log("card", card);
-      const { error, paymentMethod } = await stripe.createPaymentMethod({
-        type: "card",
-        card: elements.getElement(CardElement),
+      // const card = elements.getElement("card");
+      // console.log("card", card);
+      // const { error, paymentMethod } = await stripe.createPaymentMethod({
+      //   type: "card",
+      //   card: elements.getElement(CardElement),
+      // });
+      // console.log("error, paymentMethod", error, paymentMethod);
+
+      const result = await stripe.confirmPayment({
+        //`Elements` instance that was used to create the Payment Element
+        elements,
+        confirmParams: {
+          return_url: "https://example.com/order/123/complete",
+        },
       });
-      console.log("error, paymentMethod", error, paymentMethod);
+
+      if (result.error) {
+        // Show error to your customer (for example, payment details incomplete)
+        console.log(result.error.message);
+      } else {
+        console.log("result", result);
+      }
     };
 
     return (
       <form onSubmit={handleSubmit}>
-        <CardElement />
+        {/* <CardElement /> */}
+        <PaymentElement />
         <button type="submit" disabled={!stripe || !elements}>
           Pay
         </button>
